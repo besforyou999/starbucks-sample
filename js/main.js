@@ -35,3 +35,11 @@ window.addEventListener('scroll', _.throttle(function() {
 }, 300));  
 // _.throttle(함수, 시간) 두 번째 인자로 전달한 콜백함수는 lodash 라이브러리 함수. throttle로 함수가 일정시간에만 실행되도록 제한을 걸 수 있다.
 
+
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function(fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * .7,
+    opacity: 1
+  });
+});
