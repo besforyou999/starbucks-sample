@@ -336,6 +336,7 @@ header .badges .badge {
   height: 100%;
   background-color: #333;
 }
+
 .notice .notice-line .bg-right {
   position: absolute;
   top: 0;
@@ -344,10 +345,12 @@ header .badges .badge {
   height: 100%;
   background-color: #f6f5ef;
 }
+
 .notice .notice-line .inner {
-  height: 62px;
+  height: 62px;/*부모에 높이값이 없고, 기본값이 세로로 줄어들려고 하기때문에 */
   display: flex;
 }
+
 .notice .notice-line .inner__left {
   width: 60%;
   height: 100%;
@@ -355,17 +358,29 @@ header .badges .badge {
   display: flex;
   align-items: center;
 }
+
 .notice .notice-line .inner__left h2 {
   color: #fff;
   font-size: 17px;
   font-weight: 700;
   margin-right: 20px;
 }
-.notice .notice-line .inner__left .swiper-container {
+
+.notice .notice-line .inner__left .swiper-container { /*중요*/
   height: 62px;
-  background-color: orange;
   flex-grow: 1;
 }
+
+.notice .notice-line .inner__left .swiper-slide { 
+  height: 62px;
+  display: flex;
+  align-items: center;
+}
+
+.notice .notice-line .inner__left .swiper-slide a { 
+  color: #fff;
+}
+
 .notice .notice-line .inner__left .notice-line__more {
   width: 62px;
   height: 62px;
@@ -373,10 +388,12 @@ header .badges .badge {
   justify-content: center;
   align-items: center;
 }
+
 .notice .notice-line .inner__left .notice-line__more .material-icons {
   color: #fff;
   font-size: 30px;
 }
+
 .notice .notice-line .inner__right {
   width: 40%;
   height: 100%;
@@ -384,10 +401,12 @@ header .badges .badge {
   justify-content: flex-end;
   align-items: center;
 }
+
 .notice .notice-line .inner__right h2 {
   font-size: 17px;
   font-weight: 700;
 }
+
 .notice .notice-line .inner__right .toggle-promotion {
   width: 62px;
   height: 62px;
@@ -396,6 +415,7 @@ header .badges .badge {
   justify-content: center;
   align-items: center;
 }
+
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }

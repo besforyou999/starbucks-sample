@@ -18,7 +18,6 @@ searchInputEl.addEventListener('blur', function() {
 const badgeEl = document.querySelector('header .badges');
 
 window.addEventListener('scroll', _.throttle(function() {
-  console.log(window.scrollY);
   if (window.scrollY > 500) {
     // 배지 서서히 사라지게 하기
     gsap.to(badgeEl, .6, {
@@ -43,3 +42,9 @@ fadeEls.forEach(function(fadeEl, index) {
     opacity: 1
   });
 });
+
+
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+});
+
