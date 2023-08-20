@@ -46,5 +46,23 @@ fadeEls.forEach(function(fadeEl, index) {
 
 new Swiper('.notice-line .swiper-container', {
   direction: 'vertical',
+  loop: true,
 });
 
+new Swiper('.promotion .swiper-container', {
+  slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true,
+  loop: true,
+  // autoplay: {
+  //   delay: 5000
+  // }
+  pagination: {
+    el: '.promotion .swiper-pagination',
+    clickable: true
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next'
+  }
+});
