@@ -16,6 +16,7 @@ searchInputEl.addEventListener('blur', function() {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function() {
   if (window.scrollY > 500) {
@@ -24,15 +25,29 @@ window.addEventListener('scroll', _.throttle(function() {
       opacity: 0,
       display: 'none'
     });
+
+    // 상단 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    });
+
   } else {
     // 배지 다시 보이게 하기
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     });
+
+    // 상단 버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100
+    });
   }
 }, 300));  
 // _.throttle(함수, 시간) 두 번째 인자로 전달한 콜백함수는 lodash 라이브러리 함수. throttle로 함수가 일정시간에만 실행되도록 제한을 걸 수 있다.
+
+
+toTopEl.addEventListener('click', () => gsap.to(window, {duration: 2, scrollTo: 0}) )
 
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
